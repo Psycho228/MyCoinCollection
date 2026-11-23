@@ -50,6 +50,22 @@ export default defineConfig(async () => {
     plugins: [
       vinext(),
       sites(),
+      {
+        name: "coin-collection-client-assets",
+        configEnvironment(name) {
+          if (name !== "client") return;
+
+          return {
+            build: {
+              rollupOptions: {
+                output: {
+                  entryFileNames: "assets/coin-app-[hash].js",
+                },
+              },
+            },
+          };
+        },
+      },
       cloudflare({
         viteEnvironment: { name: "rsc", childEnvironments: ["ssr"] },
         config: localBindingConfig,
