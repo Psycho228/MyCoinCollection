@@ -21,3 +21,33 @@
   color: inherit;
   text-decoration: none;
 }
+
+.sideRadio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fallbackModal .modalPhoto img {
+  display: none;
+}
+
+.sideRadioObverse:checked ~ .modalPhoto .obversePhoto,
+.sideRadioReverse:checked ~ .modalPhoto .reversePhoto {
+  display: block;
+}
+
+.fallbackModal .sideSwitch label {
+  border-radius: 99px;
+  padding: 9px 13px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.sideRadioObverse:checked ~ .modalPhoto .obverseLabel,
+.sideRadioReverse:checked ~ .modalPhoto .reverseLabel {
+  background: var(--ink);
+  color: white;
+}
