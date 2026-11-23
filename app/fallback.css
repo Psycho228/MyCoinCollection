@@ -1,0 +1,23 @@
+.card {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fallbackModal {
+  display: none;
+}
+
+.fallbackModal:target {
+  display: grid;
+}
+
+.modalBackdrop:not(.fallbackModal) ~ .fallbackModal:target {
+  display: none;
+}
+
+.fallbackModal .close {
+  display: grid;
+  place-items: center;
+  color: inherit;
+  text-decoration: none;
+}
